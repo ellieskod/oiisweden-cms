@@ -1,0 +1,100 @@
+backend:
+  name: github
+  repo: ellieskod/oiisweden
+  branch: main
+
+i18n:
+  structure: separate_files
+  locales: [sv, en]
+  default_locale: sv
+
+media_folder: public/uploads
+public_path: /uploads
+
+collections:
+  - name: pages
+    label: Pages
+    folder: src/content/pages
+    slug: "{{fields.slug}}"
+    create: true
+    i18n: true
+    format: json
+    fields:
+      - name: template
+        label: Template
+        widget: hidden
+        default: pages
+        i18n: false
+      - name: title
+        label: Title
+        widget: string
+        i18n: true
+      - name: slug
+        label: Slug
+        widget: string
+        i18n: false
+      - name: description
+        label: Meta Description
+        widget: text
+        i18n: true
+      - name: hero
+        label: Hero Section
+        widget: object
+        i18n: true
+        fields:
+          - name: headline
+            label: Headline
+            widget: string
+            i18n: true
+          - name: description
+            label: Description
+            widget: text
+            i18n: true
+      - name: sections
+        label: Sections
+        widget: list
+        i18n: true
+        types:
+          - label: Cards
+            name: cards
+            widget: object
+            fields:
+              - name: type
+                label: Type
+                widget: hidden
+                default: cards
+              - name: description
+                label: Description
+                widget: text
+              - name: cards
+                label: Cards
+                widget: list
+                fields:
+                  - name: title
+                    label: Title
+                    widget: string
+                  - name: description
+                    label: Description
+                    widget: text
+                  - name: icon
+                    label: Icon
+                    widget: string
+                  - name: page
+                    label: Link to Page
+                    widget: string
+                    required: false
+                  - name: link
+                    label: External Link
+                    widget: string
+                    required: false
+          - label: Text
+            name: text
+            widget: object
+            fields:
+              - name: type
+                label: Type
+                widget: hidden
+                default: text
+              - name: content
+                label: Content
+                widget: markdown
