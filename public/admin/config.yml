@@ -2,6 +2,8 @@ backend:
   name: github
   repo: ellieskod/oiisweden
   branch: main
+  auth_endpoint: admin/auth
+  base_url: https://oiisweden-cms.oiisweden.workers.dev
 
 i18n:
   structure: separate_files
