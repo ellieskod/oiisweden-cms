@@ -1,0 +1,55 @@
+{
+  "$ref": "#/definitions/pages",
+  "definitions": {
+    "pages": {
+      "type": "object",
+      "properties": {
+        "template": {
+          "type": "string",
+          "const": "pages"
+        },
+        "title": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "hero": {
+          "type": "object",
+          "properties": {
+            "headline": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "headline",
+            "description"
+          ],
+          "additionalProperties": false
+        },
+        "sections": {
+          "type": "array"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "template",
+        "title",
+        "slug",
+        "description",
+        "hero",
+        "sections"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
