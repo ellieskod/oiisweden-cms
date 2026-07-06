@@ -1,5 +1,5 @@
 name = "oiisweden-cms"
-main = "dist/server/entry.mjs"
+main = "dist/_worker.js"
 compatibility_date = "2024-01-01"
 
 [build]
