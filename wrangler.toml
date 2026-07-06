@@ -1,0 +1,14 @@
+name = "oiisweden-cms"
+type = "javascript"
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+
+[build]
+command = "npm run build"
+cwd = "./"
+watch_paths = ["src/**/*.{ts,tsx,js,jsx,astro}"]
+
+[build.upload]
+format = "service-worker"
